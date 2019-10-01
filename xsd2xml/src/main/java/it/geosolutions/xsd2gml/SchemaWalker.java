@@ -88,9 +88,9 @@ final class SchemaWalker {
             final Element simpleExtensionElement =
                     searchElement(complexType, "./simpleContent/extension");
             if (simpleExtensionElement != null && simpleExtensionElement.hasAttribute("base")) {
-                rootSimpleTypes.add(complexType);
+		// rootSimpleTypes.add(complexType);
                 walkTypeProperties(extractUnqualifiedTypeName(simpleExtensionElement, "base"));
-                return;
+		// return;
             }
             // so we found a new root complex type, let's store it
             rootComplexTypes.put(complexType, Collections.emptySet());
